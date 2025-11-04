@@ -1,0 +1,244 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+/* Fundo da página (Ciano/Azul) */
+body {
+    background: linear-gradient(135deg, rgba(110, 245, 255, 1) 0%, rgba(66, 147, 153, 1) 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza horizontalmente todo o conteúdo do body */
+    justify-content: flex-start; /* Mantém o conteúdo alinhado ao topo, dando controle sobre a posição do card */
+}
+
+/* Header com borda roxa superior */
+.header {
+    width: 100%;
+    height: 250px; 
+    background: linear-gradient(0deg, rgba(176, 172, 226, 1) 0%, rgba(17, 0, 251, 0.33) 100%);
+    border-bottom-left-radius: 160px; /* Curvatura */
+    border-bottom-right-radius: 160px; /* Curvatura */
+    display: flex;
+    justify-content: center; 
+    align-items: flex-end; /* Alinha a logo na parte inferior do header */
+    position: relative;
+    z-index: 10; /* Garante que o header fique atrás do card, mas por cima do body */
+}
+
+/* Logo (Centralizada por conta do flexbox no .header)*/
+.logo {
+    width: 296px;
+    height: 198px;
+    border-radius: 55px;
+    object-fit: contain;
+    position: relative;
+    bottom: -10px; /* Move a logo um pouco para baixo, sobrepondo o card */
+}
+
+/* Conteúdo principal (o card de autenticação) */
+.container {
+    width: 100%;
+    max-width: 480px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    /* Correção para centralizar o card sobre a borda roxa */
+    margin-top: -5px; 
+    z-index: 20; 
+}
+
+/* Cartão */
+.card {
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 40px 30px;
+    width: 100%;
+}
+/* texto de criação de conta*/
+h1 {
+    font-size: 28px; /* Maior */
+    font-weight: 700;
+    color: #2C3E50;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #2C3E50;
+    font-size: 18px; /* Maior */
+    margin-bottom: 30px;
+}
+
+/* Inputs */
+.input-group {
+    margin-bottom: 20px;
+    /* Centraliza os elementos filhos (inputs) */
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+/* Estilização para E-mail e Senha (Maiores e Consistentes) */
+input[type="email"],
+input[type="password"] {
+    width: 90%; /* Ajuste para ter margem lateral */
+    max-width: 400px;
+    padding: 18px; /* Maior */
+    font-size: 17px; /* Maior */
+    border: 1px solid #E0E0E0;
+    border-radius: 12px;
+    background: #F5F5F5;
+    color: #2C3E50;
+    outline: none;
+    transition: border-color 0.3s;
+    margin-top: 15px;
+}
+
+/* Remove a margem superior do primeiro input */
+input[type="email"] {
+    margin-top: 0;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #00E5CC;
+}
+
+input[type="email"]::placeholder,
+input[type="password"]::placeholder {
+    color: #999;
+}
+
+/* Botões */
+.btn-primary {
+    width: 90%; /* Ajustado para bater com os inputs */
+    max-width: 400px;
+    padding: 18px; /* Maior */
+    font-size: 18px; /* Maior */
+    font-weight: 600;
+    color: #FFF;
+    background: #000;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-bottom: 15px; 
+    transition: background-color 0.3s;
+    display: block; /* Garante que o botão ocupe sua largura máxima */
+    margin-left: auto;
+    margin-right: auto;
+}
+/* Botão de Entrar/Continuar */
+.btn-primary:hover {
+    background: #333;
+}
+
+/* Botão Secundário (Criar Conta) */
+.btn-secondary {
+    width: 90%;
+    max-width: 400px;
+    padding: 18px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #2C3E50; 
+    background: #ffffff; 
+    border: 2px solid #2C3E50; 
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 25px; 
+    transition: background-color 0.3s, border-color 0.3s;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-secondary:hover {
+    background: #f0f0f0;
+    border-color: #000;
+}
+
+/* Link de Esqueceu a Senha */
+.forgot-password {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.forgot-password a {
+    color: #2C3E50;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+
+/* Divider (Centralizado e com largura ajustada) */
+.divider {
+    display: flex;
+    align-items: center;
+    margin: 20px auto; /* Centraliza o divider horizontalmente */
+    color: #2C3E50;
+    font-weight: 500;
+    width: 90%;
+    max-width: 400px;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #E0E0E0;
+}
+
+.divider span {
+    padding: 0 10px;
+}
+
+/* Termos */
+.terms {
+    text-align: center;
+    font-size: 13px;
+    color: #2C3E50;
+    line-height: 1.5;
+}
+
+.terms a {
+    color: #2C3E50;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+/* Mídia Query para Responsividade em Celulares */
+@media (max-width: 480px) {
+    .header {
+        height: 180px;
+    }
+    .logo {
+        width: 200px;
+        height: 130px;
+    }
+    .container {
+        margin-top: -60px;
+    }
+    .card {
+        padding: 30px 20px;
+    }
+    /* inputs e botões ocupam 100% da largura do card em mobile */
+    input[type="email"],
+    input[type="password"],
+    .btn-primary,
+    .btn-secondary,
+    .divider {
+        width: 100%; 
+        max-width: none; 
+    }
+}
